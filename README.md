@@ -1,2 +1,2 @@
-# ducy
-Ducy Unzips Code, YEET!
+# DUCY
+DUCY Unzips Code, YEET!
