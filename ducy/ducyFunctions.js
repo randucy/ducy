@@ -11,4 +11,5 @@ function runDucy() {
       ducyHelp()
       break
   }
+  console.log('outi')
 }

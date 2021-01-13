@@ -10,3 +10,14 @@ const ducyHelpData = [
     usage: 'install <moduleName>'
   }
 ]
+
+const ducyModules = [
+  {
+    name: 'testModule',
+    link: 'hello.com'
+  },
+  {
+    name: 'moreModules',
+    link: 'https://beta.vibestream.online/js/playMusic.js'
+  }
+]
