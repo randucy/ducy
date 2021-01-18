@@ -27,14 +27,14 @@ function ducyInstall() {
     return
   }
 
-  const url = moduleList.find( ({ name }) => name == moduleName );
+  const ducyURL = moduleList.find( ({ name }) => name == moduleName );
 
-  if (url == undefined) {
+  if (ducyURL == undefined) {
     newCommandLine('Module ' + moduleName + ' not found')
     return
   }
 
-  for (let i = 0; i < url.link.length; i++) {
+  for (let i = 0; i < ducyURL.link.length; i++) {
     let newScript = document.createElement('script')
     newScript.setAttribute('src',url.link[i])
     document.body.appendChild(newScript)
