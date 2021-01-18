@@ -40,7 +40,7 @@ function ducyInstall() {
 
   let newFunctionObject = protoFunctionObject;
   newFunctionObject.name = moduleName;
-  newFunctionObject.requestFunction = ducyURL.runFunctionName;
+  newFunctionObject.requestFunction = chosenModule.runFunctionName;
 
   for (let i = 0; i < chosenModule.link.length; i++) {
     let newScript = document.createElement('script')
