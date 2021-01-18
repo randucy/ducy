@@ -1,7 +1,7 @@
 function ducyHelp() {
-  var ducyHelpObjects;
-
-  for (ducyHelpObjects = 0; ducyHelpObjects < ducyHelpData.length ; ducyHelpObjects++) {
-    newCommandLine(ducyHelpData[ducyHelpObjects].name)
+  newCommandLine('||========[ Ducy Help ]========||')
+  for (let i = 0; i < ducyHelpData.length; i++) {
+    newCommandLine(ducyHelpData[i].name + ': ' + ducyHelpData[i].description + '[' + ducyHelpData[i].usage + ']')
   }
+  newCommandLine('||=============================||')
 }
