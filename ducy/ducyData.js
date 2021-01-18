@@ -8,5 +8,10 @@ const ducyHelpData = [
     name: 'install',
     description: 'installs a module',
     usage: 'install <moduleName>'
+  },
+  {
+    name: 'list',
+    description: 'lists all available modules',
+    usage: 'list'
   }
 ]
