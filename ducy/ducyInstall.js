@@ -4,7 +4,6 @@ fetch('https://randucy-modules.netlify.app/moduleList.json').then(
 ).then(
   function(json){
     moduleList = json;
-    console.log(moduleList)
   }
 )
 
@@ -27,17 +26,31 @@ function ducyInstall() {
     return
   }
 
-  const ducyURL = moduleList.find( ({ name }) => name == moduleName );
+  const chosenModule = moduleList.find( ({ name }) => name == moduleName );
 
-  if (ducyURL == undefined) {
+  if (chosenModule == undefined) {
     newCommandLine('Module ' + moduleName + ' not found')
     return
   }
 
-  for (let i = 0; i < ducyURL.link.length; i++) {
+  const protoFunctionObject = {
+    "name": "",
+    "requestFunction": ""
+  };
+
+  let newFunctionObject = protoFunctionObject;
+  newFunctionObject.name = moduleName;
+  newFunctionObject.requestFunction = ducyURL.runFunctionName;
+
+  for (let i = 0; i < chosenModule.link.length; i++) {
     let newScript = document.createElement('script')
-    newScript.setAttribute('src',ducyURL.link[i])
+    newScript.setAttribute('src',chosenModule.link[i])
     document.body.appendChild(newScript)
-  }
-  console.log(ducyURL.link)
+  };
+
+
+
+  functionList.push(newFunctionObject)
+
+  console.log(chosenModule.link)
 }
