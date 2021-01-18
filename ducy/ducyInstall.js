@@ -34,9 +34,10 @@ function ducyInstall() {
     return
   }
 
-  let newScript = document.createElement('script')
-  newScript.setAttribute('src',url.link)
-  document.body.appendChild(newScript)
-
+  for (let i = 0; i < url.link.length; i++) {
+    let newScript = document.createElement('script')
+    newScript.setAttribute('src',url.link[i])
+    document.body.appendChild(newScript)
+  }
   console.log(url.link)
 }
