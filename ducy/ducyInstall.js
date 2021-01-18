@@ -1,3 +1,13 @@
+var moduleList;
+fetch('https://randucy-modules.netlify.app/moduleList.json').then(
+  function(u){ return u.json();}
+).then(
+  function(json){
+    moduleList = json;
+    console.log(moduleList)
+  }
+)
+
 function ducyInstall() {
   let args = input.value.slice(11).trim().split(/ +/g);
   let command = args.shift().toLowerCase();
@@ -17,7 +27,7 @@ function ducyInstall() {
     return
   }
 
-  const url = ducyModules.find( ({ name }) => name == moduleName );
+  const url = moduleList.find( ({ name }) => name == moduleName );
 
   if (url == undefined) {
     newCommandLine('Module ' + moduleName + ' not found')
