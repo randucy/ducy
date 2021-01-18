@@ -5,11 +5,15 @@ function runDucy() {
 
   switch(command) {
     case 'install':
-      ducyInstall()
-      break
+      ducyInstall();
+      break;
 
     case 'help':
-      ducyHelp()
-      break
+      ducyHelp();
+      break;
+
+    case 'list':
+      ducyList();
+        break;
   }
 }
