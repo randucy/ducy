@@ -1,6 +1,6 @@
 function ducyList() {
-  newCommandLine('Available modules:')
+  newLine('Available modules:')
   for (let i = 0; i < moduleList.length; i++) {
-    newCommandLine(moduleList[i].name)
+    newLine(moduleList[i].name)
   }
 }

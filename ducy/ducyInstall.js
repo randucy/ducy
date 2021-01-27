@@ -13,23 +13,23 @@ function ducyInstall() {
   let moduleName = args[0]
 
   if (args[1] !== undefined) {
-    newCommandLine('No arguments supported')
-    newCommandLine('Usage:')
-    newCommandLine(ducyHelpData[1].usage)
+    newLine('No arguments supported')
+    newLine('Usage:')
+    newLine(ducyHelpData[1].usage)
     return
   }
 
   if (moduleName == undefined) {
-    newCommandLine('No module specified')
-    newCommandLine('Usage:')
-    newCommandLine(ducyHelpData[1].usage)
+    newLine('No module specified')
+    newLine('Usage:')
+    newLine(ducyHelpData[1].usage)
     return
   }
 
   const chosenModule = moduleList.find( ({ name }) => name == moduleName );
 
   if (chosenModule == undefined) {
-    newCommandLine('Module ' + moduleName + ' not found')
+    newLine('Module ' + moduleName + ' not found')
     return
   }
 
