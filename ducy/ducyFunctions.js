@@ -1,18 +1,20 @@
-function runDucy() {
+let ducy = {};
+
+ducy.run = function() {
   let args = input.value.slice(5).trim().split(/ +/g);
   let command = args.shift().toLowerCase();
 
   switch(command) {
     case 'install':
-      ducyInstall();
+      ducy.install();
       break;
 
     case 'help':
-      ducyHelp();
+      ducy.help();
       break;
 
     case 'list':
-      ducyList();
+      ducy.list();
         break;
   }
 }

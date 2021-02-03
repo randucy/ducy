@@ -1,4 +1,5 @@
-const ducyHelpData = [
+ducy.data = {};
+ducy.data.help = [
   {
     name: 'help',
     description: 'shows this screen',

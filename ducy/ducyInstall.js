@@ -1,35 +1,35 @@
-var moduleList;
+ducy.moduleList;
 fetch('https://randucy-modules.netlify.app/moduleList.json').then(
   function(u){ return u.json();}
 ).then(
   function(json){
-    moduleList = json;
+    ducy.moduleList = json;
   }
 )
 
-function ducyInstall() {
+ducy.install = function() {
   let args = input.value.slice(11).trim().split(/ +/g);
   let command = args.shift().toLowerCase();
   let moduleName = args[0]
 
   if (args[1] !== undefined) {
-    newLine('No arguments supported')
-    newLine('Usage:')
-    newLine(ducyHelpData[1].usage)
+    randucy.newLine('No arguments supported')
+    randucy.newLine('Usage:')
+    randucy.newLine(ducy.data.help[1].usage)
     return
   }
 
   if (moduleName == undefined) {
-    newLine('No module specified')
-    newLine('Usage:')
-    newLine(ducyHelpData[1].usage)
+    randucy.newLine('No module specified')
+    randucy.newLine('Usage:')
+    randucy.newLine(ducy.data.help[1].usage)
     return
   }
 
-  const chosenModule = moduleList.find( ({ name }) => name == moduleName );
+  const chosenModule = ducy.moduleList.find( ({ name }) => name == moduleName );
 
   if (chosenModule == undefined) {
-    newLine('Module ' + moduleName + ' not found')
+    randucy.newLine('Module ' + moduleName + ' not found')
     return
   }
 
@@ -50,7 +50,7 @@ function ducyInstall() {
 
 
 
-  functionList.push(newFunctionObject)
+  randucy.functionList.push(newFunctionObject)
 
   console.log(chosenModule.link)
 }

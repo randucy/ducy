@@ -1,6 +1,6 @@
-function ducyList() {
-  newLine('Available modules:')
-  for (let i = 0; i < moduleList.length; i++) {
-    newLine(moduleList[i].name)
+ducy.list = function() {
+  randucy.newLine('Available modules:')
+  for (let i = 0; i < ducy.moduleList.length; i++) {
+    randucy.newLine(ducy.moduleList[i].name)
   }
 }
